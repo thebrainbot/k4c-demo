@@ -1,4 +1,5 @@
 const faker = require('faker');
+const fs = require('fs');
 
 /**
  * Generates a mock of a user for blog posts.
@@ -26,7 +27,6 @@ const generatePersonData = () => {
  */
 const generatePeople = (count) => {
   const authors = [];
-  console.log(`starting en at count ${count}`)
   for(let i = 0; i < count; i++) {
     const person = generatePersonData();
     authors.push(person);
@@ -71,6 +71,19 @@ const postGenerator = (postCount, people) => {
   return posts;
 }
 
+/**
+ * Writes the data to a local file.
+ * 
+ * @param {Array<Object>} people List of people
+ * @param {Array<Object>} posts List of posts
+ */
+const writeData = (people, posts) => {
+  fs.writeFileSync(
+    "./db.json",
+    JSON.stringify({people, posts})
+  );
+}
+
 const init = () => {
   const userCount = faker.datatype.number({min: 8, max: 20});
   const postCount = faker.datatype.number({min: 15, max:50});
@@ -78,7 +91,8 @@ const init = () => {
   console.log(`Generating ${postCount} posts`)
   const people = generatePeople(userCount);
   const posts = postGenerator(postCount, people);
-  return {people, posts};
+
+  writeData(people, posts);
 }
 
-console.log(init());
+init();
