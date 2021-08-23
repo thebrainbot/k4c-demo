@@ -1,0 +1,11 @@
+{
+  "name": "faker-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}
