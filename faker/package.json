@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "faker": "node index.js",
+    "json-server": "json-server --watch db.json --port 3004"
+  },
   "author": "",
   "license": "GPL-3.0-or-later",
   "dependencies": {
