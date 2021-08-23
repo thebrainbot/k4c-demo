@@ -1,3 +1,6 @@
+# Custom ignores
+/faker/db.json
+
 # Logs
 logs
 *.log
