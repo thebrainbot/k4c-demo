@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Home, Post, User } from './routes';
+import { Home, Post } from './routes';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,9 +12,6 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/user/:id">
-            <User />
-          </Route>
           <Route path="/post/:id">
             <Post />
           </Route>
