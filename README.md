@@ -2,11 +2,27 @@
 
 ## Setup
 
+Setup should be simple as there are few dependencies required. Being a simple mono repo, the mock api is under 'faker' and the react app is under 'app'.
+
+Faker:
+
 ```
 cd faker
 yarn install
 npm install -g json-server
+yarn faker
+yarn json-server
 ```
+
+React:
+
+```
+cd app
+yarn install
+yarn start
+```
+
+The react app should be reachable at: `http://localhost:3000` or via your ip.
 
 ## Faker API Data
 
@@ -21,3 +37,5 @@ To generate a new data set, there are two methods to handle this. Executing the 
 ### Serving data
 
 To server data, there are two methods. There is a yarn script to help `yarn json-serve` and it can also be directly executed via `json-server --watch db.json --port 3004`. This will start the server and create the endpoints for the data in the db.json file.
+
+## Future improvements
