@@ -51,8 +51,8 @@ const generatePostData = (id, authorID) => {
     slug: faker.lorem.slug(),
     content: faker.lorem.paragraphs(paragraphCount),
     authorID,
-    image: faker.image.nature(800, 600, true),
-    summary: faker.lorem.paragraph(2),
+    image: faker.image.nature(960, 540, true),
+    summary: faker.lorem.lines(2),
   }
 }
 
