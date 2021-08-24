@@ -22,20 +22,24 @@ export const CardList = ({data}) => {
   return (
     <Grid 
       container
-      className={classes.root}
+      className={`${classes.root} card-list`}
       spacing={3} 
       direction="row" 
       justifyContent="space-between" 
       alignItems="flex-start"
+      data-test-id="card-list"
     >
-      {data.map((cardData) => (
-        <Card
-          id={cardData.id}
-          image={cardData.image} 
-          title={cardData.title}
-          summary={cardData.summary}
-        />
-      ))}
+      {data ?
+        data.map((cardData) => (
+          <Card
+            id={cardData.id}
+            image={cardData.image} 
+            title={cardData.title}
+            summary={cardData.summary}
+          />
+        ))
+        : <div>Loading Content</div>
+      }
     </Grid>
   );
 };

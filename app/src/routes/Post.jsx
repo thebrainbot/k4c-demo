@@ -11,7 +11,7 @@ export const Post = () => {
   const { data } = useFetchData(url);
   
   return (
-    <div className="home">
+    <div className="post">
       <Header title="Post" />
       { data && <PostItem data={data} />}
     </div>

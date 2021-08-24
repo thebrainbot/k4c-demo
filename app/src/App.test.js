@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('It renders title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const header = screen.getByText(/Home/i);
+  expect(header).toBeInTheDocument();
+});
+
+test('It renders a card list', () => {
+  const {container} = render(<App />);
+  const cardList = container.querySelector('[data-test-id="card-list"]');
+  expect(cardList).toBeInTheDocument();
 });
